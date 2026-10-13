@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Steady Brain</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.js","three/addons/":"./vendor/"}}</script>
+<script src="app.js" defer></script>
+<script src="pet-stage.js" type="module"></script>
+</head>
+<body>
+<header>
+  <strong>Steady</strong>
+  <nav>
+    <button data-tab="chat" class="active">Chat</button>
+    <button data-tab="mem">Memories</button>
+    <button data-tab="proj">Projects</button>
+    <button data-tab="jobs">Jobs</button>
+    <button data-tab="log">Activity</button>
+    <button data-tab="set">Settings</button>
+  </nav>
+  <span id="budget" title="API usage"></span>
+</header>
+<main>
+  <section id="tab-chat" class="panel active">
+    <div id="petwrap"><canvas id="petstage"></canvas>
+      <div class="row" id="petbar"><span id="petmood" class="muted">waking…</span>
+        <button data-pet="feed" title="Feed">🍖</button><button data-pet="play" title="Play">🎾</button><button data-pet="pet" title="Pet">💚</button><button data-pet="scold" title="Scold">👎</button>
+        <label class="muted"><input type="checkbox" id="venomvoice" checked> Venom answers</label>
+      </div>
+    </div>
+    <div id="moments"></div>
+    <div id="chat"></div>
+    <form id="form"><input id="in" autocomplete="off" placeholder="Talk to Steady…" maxlength="4000">
+    <button>Send</button><button type="button" id="mic" title="Voice">🎙</button><button type="button" id="spk" title="Read last reply">🔊</button></form>
+    <div class="row"><button id="reflect">Reflect now</button><span id="used" class="muted"></span></div>
+  </section>
+  <section id="tab-mem" class="panel">
+    <div class="row"><input id="mq" placeholder="Search memories…"><select id="mt"><option value="">all types</option><option>fact</option><option>preference</option><option>project</option><option>procedure</option><option>episode</option><option>question</option></select><button id="msearch">Search</button><button id="mexport">Export</button></div>
+    <div id="mems"></div>
+    <form id="mform" class="row"><input id="mtype" placeholder="type" list="types" style="max-width:120px"><input id="mkey" placeholder="key (optional)" style="max-width:160px"><input id="mcontent" placeholder="New memory…" required><button>Add</button></form>
+    <datalist id="types"><option>fact</option><option>preference</option><option>project</option><option>procedure</option><option>episode</option><option>question</option></datalist>
+  </section>
+  <section id="tab-proj" class="panel"><div id="projs"></div>
+    <form id="pform" class="row"><input id="pkey" placeholder="proj:slug" required style="max-width:160px"><input id="pcontent" placeholder="Project: goal + next action…" required><button>Save project</button></form>
+  </section>
+  <section id="tab-jobs" class="panel"><div class="row"><button id="jpump">Run due jobs now</button><button id="jcon">Enqueue consolidate</button><button id="jdig">Enqueue daily digest</button></div><div id="jobs"></div></section>
+  <section id="tab-log" class="panel"><div id="acts"></div></section>
+  <section id="tab-set" class="panel"><div id="sets"></div><div id="usage"></div>
+    <div class="row"><button id="kill">⏸ Pause autonomy</button><button id="resume">▶ Resume</button></div>
+  </section>
+</main>
+</body>
+</html>

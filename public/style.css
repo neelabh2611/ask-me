@@ -1,0 +1,27 @@
+:root { color-scheme: light dark; --line: #ccc; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 100%/1.5 system-ui, sans-serif; max-width: 760px; margin: auto; }
+header { position: sticky; top: 0; display: flex; gap: 10px; align-items: center; padding: 10px; background: Canvas; border-bottom: 1px solid var(--line); }
+nav { display: flex; gap: 4px; flex-wrap: wrap; }
+nav button { border: 1px solid transparent; background: none; cursor: pointer; padding: 6px 10px; border-radius: 999px; font: inherit; }
+nav button.active { border-color: var(--line); font-weight: 700; }
+#budget { margin-left: auto; font-size: .75rem; opacity: .7; }
+main { padding: 12px; }
+.panel { display: none; } .panel.active { display: block; }
+#chat { display: grid; gap: 8px; min-height: 200px; max-height: 55vh; overflow: auto; margin-bottom: 10px; }
+.msg { padding: 8px 12px; border: 1px solid var(--line); border-radius: 12px; max-width: 90%; white-space: pre-wrap; }
+.msg.me { justify-self: end; background: Highlight; color: HighlightText; border-color: transparent; }
+.moment { border: 1px dashed var(--line); border-radius: 12px; padding: 8px 12px; margin-bottom: 8px; }
+.row { display: flex; gap: 8px; margin: 8px 0; flex-wrap: wrap; align-items: center; }
+input, select { font: inherit; padding: 8px 10px; border: 1px solid var(--line); border-radius: 8px; }
+#form { display: flex; gap: 6px; } #in { flex: 1; }
+#petwrap { border: 1px solid var(--line); border-radius: 14px; margin-bottom: 10px; overflow: hidden; }
+#petstage { width: 100%; min-height: 240px; height: 240px; display: block; }
+#petbar { padding: 0 10px; }
+#petbar button { padding: 6px 10px; }
+@media (prefers-reduced-motion: reduce) { #petstage { display: none; } }
+button { font: inherit; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); background: Canvas; cursor: pointer; }
+button:active { transform: scale(.96); }
+.mem, .job, .act { border: 1px solid var(--line); border-radius: 10px; padding: 8px 10px; margin: 6px 0; }
+.muted, small { opacity: .65; font-size: .8rem; }
+.tag { font-size: .7rem; border: 1px solid var(--line); border-radius: 999px; padding: 1px 8px; }

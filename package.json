@@ -1,0 +1,11 @@
+{
+  "name": "steady-brain",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Persistent self-improving AI brain, Sarvam engine, SQLite memory, single process.",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node tests/run.mjs",
+    "live": "node --env-file=.env tests/live.mjs"
+  }
+}
